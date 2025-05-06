@@ -1,4 +1,5 @@
 Introduction:
+
 Project 2:
 This Airflow-based pipeline orchestrates periodic fetching, validation, and storage of stock market data. It retrieves real-time stock prices from Yahoo Finance (using the yfinance Python library) and from the Finnhub API. The pipeline validates incoming data with Great Expectations, then sends cleaned records to an AWS Kinesis Data Stream for real-time processing. Finally, validated data is uploaded to an Amazon S3 bucket in a date-partitioned folder structure for efficient querying. Apache Airflow schedules and manages the workflow, Great Expectations ensures data quality, and AWS handles streaming and storage.
 
@@ -208,4 +209,4 @@ Troubleshooting
         docs.aws.amazon.com
         ; for S3, browse the bucket. Confirm files are written under the expected prefixes (e.g. s3://your-bucket/YYYY/MM/DD/filename).
 
-By following these instructions and the references above, a new developer should be able to clone the repository, configure the environment, and run the stock data pipeline end-to-end. Good documentation of assumptions and errors (logs) will help with any further issues.
+By following these instructions and the references above, we can create a clone of the project in our own environment.
