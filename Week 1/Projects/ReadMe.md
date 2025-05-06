@@ -1,6 +1,6 @@
 Introduction:
 
-Project 2:
+Project 2 and 3: Real-time Stock Data Analysis with Automated ETL Pipeline
 
 This Airflow-based pipeline orchestrates periodic fetching, validation, and storage of stock market data. It retrieves real-time stock prices from Yahoo Finance (using the yfinance Python library) and from the Finnhub API. The pipeline validates incoming data with Great Expectations, then sends cleaned records to an AWS Kinesis Data Stream for real-time processing. Finally, validated data is uploaded to an Amazon S3 bucket in a date-partitioned folder structure for efficient querying. Apache Airflow schedules and manages the workflow, Great Expectations ensures data quality, and AWS handles streaming and storage.
 
