@@ -26,7 +26,7 @@ This Airflow-based pipeline orchestrates periodic fetching, validation, and stor
     lantern.splunk.com
     .
 
---Features
+Features
 
     Periodic Data Fetching: Pulls stock price data on a schedule from Yahoo Finance and Finnhub. For example, the yfinance library provides a “Pythonic” interface to Yahoo Finance data
     pypi.org
