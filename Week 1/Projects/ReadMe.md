@@ -5,31 +5,14 @@ Project 2 and 3: Real-time Stock Data Analysis with Automated ETL Pipeline
 
 This Airflow-based pipeline orchestrates periodic fetching, validation, and storage of stock market data. It retrieves real-time stock prices from Yahoo Finance (using the yfinance Python library) and from the Finnhub API. The pipeline validates incoming data with Great Expectations, then sends cleaned records to an AWS Kinesis Data Stream for real-time processing. Finally, validated data is uploaded to an Amazon S3 bucket in a date-partitioned folder structure for efficient querying. Apache Airflow schedules and manages the workflow, Great Expectations ensures data quality, and AWS handles streaming and storage.
 
-    Apache Airflow: An open-source platform to programmatically author, schedule, and monitor workflows
-    airflow.apache.org
-    .
+> Apache Airflow: An open-source platform to programmatically author, schedule, and monitor workflows airflow.apache.org
+> Great Expectations: A Python data validation library that lets you define “expectations” (rules) and automatically check that your datasets meet them bugfree.ai
+> Yahoo Finance (yfinance): The yfinance Python package fetches historical and real-time market data from Yahoo Finance pypi.org
+> Finnhub API: A free real-time stock market data API for global exchanges finnhubio.github.io
+> AWS Kinesis Data Streams: Collects and processes large streams of data records in real time, ideal for pushing stock ticks to downstream consumers docs.aws.amazon.com
+> Amazon S3: Serves as the long-term data store, organizing files into partitions (e.g. by date or symbol).
 
-    Great Expectations: A Python data validation library that lets you define “expectations” (rules) and automatically check that your datasets meet them
-    bugfree.ai
-    .
-
-    Yahoo Finance (yfinance): The yfinance Python package fetches historical and real-time market data from Yahoo Finance
-    pypi.org
-    .
-
-    Finnhub API: A free real-time stock market data API for global exchanges
-    finnhubio.github.io
-    .
-
-    AWS Kinesis Data Streams: Collects and processes large streams of data records in real time, ideal for pushing stock ticks to downstream consumers
-    docs.aws.amazon.com
-    .
-
-    Amazon S3: Serves as the long-term data store, organizing files into partitions (e.g. by date or symbol) for efficient querying
-    lantern.splunk.com
-    .
-
-Features
+> Features
 
     Periodic Data Fetching: Pulls stock price data on a schedule from Yahoo Finance and Finnhub. For example, the yfinance library provides a “Pythonic” interface to Yahoo Finance data
     pypi.org
@@ -51,7 +34,7 @@ Features
 
     Containerized Deployment: The project is containerized using Docker Compose for easy setup. This allows running Airflow, its dependencies, and services in isolated Docker containers.
 
-Prerequisites
+> Prerequisites
 
 Before setting up the project, ensure you have the following:
 
@@ -72,7 +55,7 @@ Before setting up the project, ensure you have the following:
 
     Python (for development): Python 3.x installed locally if you plan to run or test parts of the pipeline outside Docker. All other libraries are installed inside the Docker containers.
 
-Setup Instructions
+> Setup Instructions
 
     Clone the repository.
 
@@ -126,7 +109,7 @@ Verify the setup. Ensure containers are running and healthy:
     airflow.apache.org
     ). The first run may take a minute as images are built.
 
-Running the Airflow DAG
+> Running the Airflow DAG
 
     Airflow Web UI: Open your browser to http://localhost:8080. Log in with the admin credentials (default airflow/airflow
     airflow.apache.org
@@ -144,7 +127,7 @@ Running the Airflow DAG
 
         S3 Bucket: In the AWS S3 console, browse to the specified bucket. You should see folders (partitions) corresponding to dates or symbols. Files within these folders contain the validated CSV or JSON stock data. You can download or preview them in the console.
 
-Environment Variables Reference
+> Environment Variables Reference
 
     FINNHUB_API_KEY – Your Finnhub API key (free registration at finnhub.io).
 
