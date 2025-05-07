@@ -59,7 +59,7 @@ Before setting up the project, ensure you have the following:
 
     Clone the repository.
 
-git clone https://github.com/yourusername/stock-data-pipeline.git
+git clone the pipeline.py file
 cd stock-data-pipeline
 
 Configure environment variables. Copy the example .env file and populate it with your keys. For example:
