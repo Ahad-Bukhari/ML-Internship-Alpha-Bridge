@@ -1,3 +1,4 @@
+![Pipeline](https://github.com/user-attachments/assets/ef8c7049-72b0-46b0-90a6-0b6208072599)
 Introduction:
 
 Project 2 and 3: Real-time Stock Data Analysis with Automated ETL Pipeline
